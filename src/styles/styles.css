@@ -1,0 +1,68 @@
+body {
+  font-size: 13px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.bg-blue {
+  background-color: #3a486f !important;
+}
+
+.bg-yellow {
+  background-color: #ecdf94;
+}
+
+.bg-gray {
+  background-color: #f1f1f1;
+}
+
+.text-blue {
+  color: #3a486f;
+}
+
+.text-big {
+  font-size: 50px;
+}
+
+.active {
+  color: #ecdf94 !important;
+}
+
+.height100 {
+  min-height: 100px;
+}
+
+.header .top-nav .container {
+  position: relative;
+}
+.header .top-nav .container .navbar-brand div {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.header .top-nav .container .navbar-nav {
+  padding-left: 220px;
+}
+.header .top-nav .container .navbar-nav a:hover {
+  color: #959CB2 !important;
+}
+
+.slide {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background: url("../images/bg-main1.jpg") 50% center/cover no-repeat;
+}
+
+.main-content .main-photo {
+  border: 9px solid #2f2e2e;
+}
+
+.footer {
+  color: #959CB2;
+}
+@media screen and (min-width: 768px) {
+  .footer .footer-col:not(:last-child) {
+    border-right: 1px solid #959CB2;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

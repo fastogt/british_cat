@@ -1,0 +1,87 @@
+$blue: #3a486f;
+$yellow: #ecdf94;
+$gray: #f1f1f1;
+$gray-mid: #959CB2;
+$gray-dark: #2f2e2e;
+
+$small-font: 13px;
+$big-font: 50px;
+
+body {
+  font-size: $small-font;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.bg-blue {
+  background-color: $blue !important;
+}
+
+.bg-yellow {
+  background-color: $yellow;
+}
+
+.bg-gray {
+  background-color: $gray;
+}
+
+.text-blue {
+  color: $blue;
+}
+
+.text-big {
+  font-size: $big-font;
+}
+
+.active {
+  color: $yellow !important;
+}
+
+.height100 {
+  min-height: 100px;
+}
+
+.header {
+  .top-nav {
+    .container {
+      position: relative;
+
+      .navbar-brand div {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .navbar-nav {
+        padding-left: 220px;
+
+        a:hover {
+          color: $gray-mid !important;
+        }
+      }
+    }
+  }
+}
+
+.slide {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background: url("../images/bg-main1.jpg") 50% center / cover no-repeat;
+}
+
+.main-content {
+  .main-photo {
+    border: 9px solid $gray-dark;
+  }
+}
+
+.footer {
+  color: $gray-mid;
+
+  .footer-col {
+    &:not(:last-child) {
+      @media screen and (min-width: 768px) {
+        border-right: 1px solid $gray-mid;
+      }
+    }
+  }
+}
