@@ -24,7 +24,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-item nav-link text-white active" href="#">ГЛАВНАЯ</a>
-                        <a class="nav-item nav-link text-white" href="">О СТУДИИ</a>
+                        <a class="nav-item nav-link text-white" href="src/pages/about.html">О СТУДИИ</a>
                         <a class="nav-item nav-link text-white" href="">КУРС АНГЛИЙСКОГО</a>
                         <a class="nav-item nav-link text-white" href="">СТОИМОСТЬ</a>
                         <a class="nav-item nav-link text-white" href="">РАСПИСАНИЕ</a>
@@ -112,7 +112,7 @@
         </div>
     </div>
     <div class="container bg-yellow">
-        <h3 class="text-center font-weight-bold p-4">Преимущества<br/>занятий в студии "Британский Кот"</h3>
+        <h3 class="text-center text-blue font-weight-bold p-4">Преимущества<br/>занятий в студии "Британский Кот"</h3>
         <div class="row">
             <div class="col-lg-6 px-md-5">
                 <p>В студии английского языка "Британский кот" опытные преподаватели по английскому языку помогут
@@ -127,6 +127,55 @@
                 <p>В распоряжении студентов хорошо оборудованные аудитории с видео-, аудиотехникой.</p>
                 <p>С Вами работают квалифицированные специалисты постоянно повышающие квалификацию за рубежом.</p>
             </div>
+        </div>
+    </div>
+    <div class="container">
+        <h3 class="text-center text-blue font-weight-bold p-4">Отзывы наших учеников</h3>
+        <div class="row">
+            <div class="col-lg-6 mb-2 mb-sm-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RXv4auSraNw?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-2 mb-sm-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jjX0jUrv4js?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-2 mb-sm-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/gzCqtmAIsvE?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-2 mb-sm-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ABCFS8McjuA?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <p class="text-center text-blue font-weight-bold p-4" id="reviews-show" onclick="showHide()">Смотреть все отзывы...</p>
+        </div>
+        <div class="row" id="all-reviews" style="display: none;">
+            <div class="col-lg-6 mb-2 mb-sm-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/JvxEgclB_hE?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-2 mb-sm-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DXuiVlr9qqg?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-2 mb-sm-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fgL9W0dHAXg?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-2 mb-sm-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9-R_a2ESpSk?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <p class="text-center text-blue font-weight-bold p-4"  onclick="showHide()">Скрыть часть отзывов...</p>
         </div>
     </div>
 </div>
@@ -156,5 +205,18 @@
 <script src="src/bootstrap/jquery-3.3.1.slim.min.js"></script>
 <script src="src/bootstrap/popper.min.js"></script>
 <script src="src/bootstrap/bootstrap.min.js"></script>
+<script defer>
+    function showHide() {
+        var allReviews = document.getElementById("all-reviews");
+        var link = document.getElementById("reviews-show");
+        if (allReviews.style.display === "none") {
+            allReviews.style.display = "flex";
+            link.style.display = "none";
+        } else {
+            allReviews.style.display = "none";
+            link.style.display = "block";
+        }
+    }
+</script>
 </body>
 </html>
