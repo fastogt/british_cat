@@ -4,7 +4,7 @@ $gray: #f1f1f1;
 $gray-mid: #959CB2;
 $gray-dark: #2f2e2e;
 
-$small-font: 13px;
+$small-font: 14px;
 $big-font: 50px;
 
 body {
@@ -32,8 +32,8 @@ body {
   font-size: $big-font;
 }
 
-.active {
-  color: $yellow !important;
+.small-line-height {
+  line-height: 1.3;
 }
 
 .height100 {
@@ -49,14 +49,36 @@ body {
         position: absolute;
         top: 0;
         left: 0;
+
+        img {
+          @media screen and (max-width: 576px) {
+            width: 120px;
+          }
+        }
+      }
+
+      .navbar-toggler {
+        border: none;
       }
 
       .navbar-nav {
         padding-left: 220px;
+        @media screen and (max-width: 576px) {
+          padding-left: 120px;
+        }
 
         a:hover {
           color: $gray-mid !important;
         }
+
+        .active {
+          color: $yellow !important;
+
+          &:hover {
+            color: $yellow !important;
+          }
+        }
+
       }
     }
   }
@@ -82,6 +104,18 @@ body {
   }
 }
 
+.slide-course {
+  background: url("../images/bg-british-cat.jpg") 50% center / cover no-repeat;
+
+  .flex-container {
+    height: 450px;
+
+    .slide-course-title {
+      width: 350px;
+    }
+  }
+}
+
 .main-content {
   .main-photo {
     border: 9px solid $gray-dark;
@@ -90,6 +124,16 @@ body {
 
   .gallery-img {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .margins100 {
+    @media screen and (min-width: 1200px) {
+      padding: 0 170px !important;
+    }
+  }
+
+  .text-indent p {
+    text-indent: 20px;
   }
 }
 
