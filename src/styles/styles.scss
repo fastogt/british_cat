@@ -5,6 +5,7 @@ $gray-mid: #959CB2;
 $gray-dark: #2f2e2e;
 
 $small-font: 14px;
+$normal-font: 18px;
 $big-font: 50px;
 
 body {
@@ -26,6 +27,12 @@ body {
 
 .text-blue {
   color: $blue;
+}
+
+.text-sm-normal {
+  @media screen and (min-width: 576px) {
+    font-size: $normal-font;
+  }
 }
 
 .text-big {
@@ -112,6 +119,29 @@ body {
 
     .slide-course-title {
       width: 350px;
+    }
+  }
+}
+
+.bg-decorated {
+  background-image: url("../images/steps.png");
+  background-repeat: no-repeat;
+  &.bg-decorated-1 {
+    background-position: 95% 5%;
+    @media screen and (max-width: 576px) {
+      background: none;
+    }
+  }
+  &.bg-decorated-2 {
+    background-position: 88% top;
+    @media screen and (max-width: 996px) {
+      background: none;
+    }
+  }
+  &.bg-decorated-3 {
+    background-position: 82% top;
+    @media screen and (max-width: 768px) {
+      background: none;
     }
   }
 }
