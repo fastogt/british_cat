@@ -19,10 +19,22 @@ body {
   color: #3a486f;
 }
 
+.text-gray {
+  color: #545454;
+}
+
+.text-black {
+  color: black;
+}
+
 @media screen and (min-width: 576px) {
   .text-sm-normal {
     font-size: 18px;
   }
+}
+
+.text-small {
+  font-size: 14px;
 }
 
 .text-big {
@@ -142,6 +154,63 @@ body {
 }
 .main-content .text-indent p {
   text-indent: 20px;
+}
+@media screen and (max-width: 576px) {
+  .main-content .schedule-block-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.main-content .schedule-block-title {
+  margin-right: 30px;
+}
+@media screen and (max-width: 576px) {
+  .main-content .schedule-block-title {
+    font-size: 20px;
+    margin-right: 0;
+  }
+}
+.main-content .schedule td {
+  padding: 8px 10px;
+  vertical-align: top;
+}
+@media screen and (max-width: 576px) {
+  .main-content .schedule td {
+    padding: 3px 5px;
+  }
+}
+.main-content .decor {
+  width: 40px;
+  border-top: 3px solid #e9db89;
+  margin: 30px 0;
+}
+.main-content form {
+  text-align: right;
+}
+.main-content form input {
+  height: 40px;
+  margin: 10px 0;
+}
+.main-content form input.btn-submit {
+  background-color: #e9db89;
+  border: none;
+}
+.main-content form input.btn-submit:hover {
+  background-color: #e4d997;
+  cursor: pointer;
+}
+.main-content .contacts {
+  position: relative;
+}
+.main-content .contacts .viber-img {
+  position: absolute;
+  top: 65px;
+  left: 180px;
+}
+
+.map {
+  height: 500px;
 }
 
 .footer {

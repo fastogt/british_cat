@@ -1,7 +1,8 @@
 $blue: #3a486f;
 $yellow: #ecdf94;
-$gray: #f1f1f1;
-$gray-mid: #959CB2;
+$gray-light: #f1f1f1;
+$gray: #959CB2;
+$gray-mid: #545454;
 $gray-dark: #2f2e2e;
 
 $small-font: 14px;
@@ -22,17 +23,29 @@ body {
 }
 
 .bg-gray {
-  background-color: $gray;
+  background-color: $gray-light;
 }
 
 .text-blue {
   color: $blue;
 }
 
+.text-gray {
+  color: $gray-mid;
+}
+
+.text-black {
+  color: black;
+}
+
 .text-sm-normal {
   @media screen and (min-width: 576px) {
     font-size: $normal-font;
   }
+}
+
+.text-small {
+  font-size: $small-font;
 }
 
 .text-big {
@@ -75,7 +88,7 @@ body {
         }
 
         a:hover {
-          color: $gray-mid !important;
+          color: $gray !important;
         }
 
         .active {
@@ -126,18 +139,21 @@ body {
 .bg-decorated {
   background-image: url("../images/steps.png");
   background-repeat: no-repeat;
+
   &.bg-decorated-1 {
     background-position: 95% 5%;
     @media screen and (max-width: 576px) {
       background: none;
     }
   }
+
   &.bg-decorated-2 {
     background-position: 88% top;
     @media screen and (max-width: 996px) {
       background: none;
     }
   }
+
   &.bg-decorated-3 {
     background-position: 82% top;
     @media screen and (max-width: 768px) {
@@ -165,15 +181,81 @@ body {
   .text-indent p {
     text-indent: 20px;
   }
+
+  .schedule-block-header {
+    @media screen and (max-width: 576px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .schedule-block-title {
+    margin-right: 30px;
+    @media screen and (max-width: 576px) {
+      font-size: 20px;
+      margin-right: 0;
+    }
+  }
+
+  .schedule {
+    td {
+      padding: 8px 10px;
+      vertical-align: top;
+      @media screen and (max-width: 576px) {
+        padding: 3px 5px;
+      }
+    }
+  }
+
+  .decor {
+    width: 40px;
+    border-top: 3px solid rgba(233, 219, 137, 1);
+    margin: 30px 0;
+  }
+
+  form {
+    text-align: right;
+
+    input {
+      height: 40px;
+      margin: 10px 0;
+
+      &.btn-submit {
+        background-color: rgba(233, 219, 137, 1);
+        border: none;
+
+        &:hover {
+          background-color: #e4d997;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .contacts {
+    position: relative;
+
+    .viber-img {
+      position: absolute;
+      top: 65px;
+      left: 180px;
+    }
+  }
+
+}
+
+.map {
+  height: 500px;
 }
 
 .footer {
-  color: $gray-mid;
+  color: $gray;
 
   .footer-col {
     &:not(:last-child) {
       @media screen and (min-width: 768px) {
-        border-right: 1px solid $gray-mid;
+        border-right: 1px solid $gray;
       }
     }
   }
