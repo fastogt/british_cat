@@ -30,6 +30,10 @@ body {
   color: $blue;
 }
 
+.text-light-gray {
+  color: $gray;
+}
+
 .text-gray {
   color: $gray-mid;
 }
@@ -79,6 +83,10 @@ body {
 
       .navbar-toggler {
         border: none;
+
+        &:focus {
+          outline: none;
+        }
       }
 
       .navbar-nav {
@@ -105,13 +113,24 @@ body {
 }
 
 .slide {
-  padding-top: 200px;
-  padding-bottom: 200px;
+  height: 530px;
+  display: flex;
+  align-items: center;
   background: url("../images/bg-main1.jpg") 50% center / cover no-repeat;
+  @media screen and (max-width: 576px) {
+    height: 100vh;
+  }
 }
 
-.slide-about {
-  background: url("../images/bg-about.jpg") 50% center / cover no-repeat;
+.bg-pattern {
+  background: url("../images/bg-pattern.jpg") 50% center / cover no-repeat;
+}
+
+.bg-cat {
+  background: url("../images/bg-british-cat.jpg") 50% center / cover no-repeat;
+}
+
+.slide-text-stairs {
 
   .flex-container {
     height: 450px;
@@ -125,7 +144,6 @@ body {
 }
 
 .slide-course {
-  background: url("../images/bg-british-cat.jpg") 50% center / cover no-repeat;
 
   .flex-container {
     height: 450px;
@@ -163,6 +181,15 @@ body {
 }
 
 .main-content {
+  .reviews-link {
+    display: inline-block;
+    text-decoration: underline !important;
+    cursor: pointer;
+    &:hover {
+      color: $blue !important;
+    }
+  }
+
   .main-photo {
     border: 9px solid $gray-dark;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
@@ -253,6 +280,14 @@ body {
   color: $gray;
 
   .footer-col {
+    .phone {
+      color: $gray;
+    }
+
+    .footer-email {
+      color: $gray;
+    }
+
     &:not(:last-child) {
       @media screen and (min-width: 768px) {
         border-right: 1px solid $gray;
