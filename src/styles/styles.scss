@@ -118,7 +118,7 @@ body {
   align-items: center;
   background: url("../images/bg-main1.jpg") 50% center / cover no-repeat;
   @media screen and (max-width: 576px) {
-    height: 100vh;
+    height: calc(100vh - 54px);
   }
 }
 
@@ -127,10 +127,23 @@ body {
 }
 
 .bg-cat {
-  background: url("../images/bg-british-cat.jpg") 50% center / cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/bg-british-cat.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% center;
+  background-size: cover;
+  .slide-course-title {
+    color: $gray-light;
+  }
+  @media screen and (min-width: 576px) {
+    background-image: url("../images/bg-british-cat.jpg");
+    .slide-course-title {
+      color: $blue;
+    }
+  }
 }
 
 .slide-text-stairs {
+  height: 450px;
 
   .flex-container {
     height: 450px;
@@ -226,12 +239,8 @@ body {
   }
 
   .schedule {
-    td {
-      padding: 8px 10px;
-      vertical-align: top;
-      @media screen and (max-width: 576px) {
-        padding: 3px 5px;
-      }
+    p {
+      margin-bottom: 0;
     }
   }
 
