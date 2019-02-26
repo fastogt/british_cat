@@ -98,7 +98,7 @@ body {
 }
 @media screen and (max-width: 576px) {
   .slide {
-    height: 100vh;
+    height: calc(100vh - 54px);
   }
 }
 
@@ -107,9 +107,26 @@ body {
 }
 
 .bg-cat {
-  background: url("../images/bg-british-cat.jpg") 50% center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/bg-british-cat.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% center;
+  background-size: cover;
+}
+.bg-cat .slide-course-title {
+  color: #f1f1f1;
+}
+@media screen and (min-width: 576px) {
+  .bg-cat {
+    background-image: url("../images/bg-british-cat.jpg");
+  }
+  .bg-cat .slide-course-title {
+    color: #3a486f;
+  }
 }
 
+.slide-text-stairs {
+  height: 450px;
+}
 .slide-text-stairs .flex-container {
   height: 450px;
   padding-top: 70px;
@@ -194,14 +211,8 @@ body {
     margin-right: 0;
   }
 }
-.main-content .schedule td {
-  padding: 8px 10px;
-  vertical-align: top;
-}
-@media screen and (max-width: 576px) {
-  .main-content .schedule td {
-    padding: 3px 5px;
-  }
+.main-content .schedule p {
+  margin-bottom: 0;
 }
 .main-content .decor {
   width: 40px;
