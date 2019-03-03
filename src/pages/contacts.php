@@ -48,14 +48,66 @@
         <div class="row text-small">
             <div class="col-12 col-md-6 px-md-5 text-center text-sm-left">
                 <p>Напишите нам!</p>
-                <form action="" method="post" class="form text-center text-sm-right" role="form">
-                    <input class="form-control" id="name" name="name" placeholder="Name *" required=""
+                <?php
+
+                function MyString($text)
+                {
+                    $str = trim($text);
+                    $str = stripslashes($str);
+                    $str = htmlspecialchars($str, ENT_QUOTES);
+                    $str = nl2br($str);
+
+                    return $str;
+                }
+
+                if (isset($_POST['Submit'])) {
+                    $Name = $_POST['Name'];
+                    $Email = $_POST['Email'];
+                    $Subject = $_POST['Subject'];
+                    $Text = $_POST['Message'];
+
+                    $Name = MyString($Name);
+                    $Text = MyString($Text);
+
+                    $Email = trim($Email);
+                    $Email = stripslashes($Email);
+
+                    if (mb_strlen($Email) > 0 && mb_strlen($Name) > 0 && mb_strlen($Text) > 0) {
+                        if (filter_var($Email, FILTER_VALIDATE_EMAIL)) {
+
+                            $template = file_get_contents('mail_message.tpl');
+                            $marker = array('{NAME}', '{MAIL}', '{SUBJECT}', '{TEXT}');
+                            $Subject = nl2br($Subject);
+                            $Text = nl2br($Text);
+                            $marker_info = array($Name, $Email, $Subject, $Text);
+                            $message = str_replace($marker, $marker_info, $template);
+
+                            $to = "studyenglishh@yandex.ru";
+                            $subject_message = "Сообщение с сайта Britishcat.by";
+
+                            $headers = "Content-type: text/html; charset=utf-8 \r\n";
+                            if (mail($to, $subject_message, $message, $headers)) {
+                                ?>
+                                <script type="text/javascript">
+                                    alert("Ваше сообщение отправлено!");
+                                </script>
+                                <?php
+                            }
+                        }
+                    }
+                }
+
+                ?>
+
+                <form action="" method="post" class="form text-center text-sm-right" role="form"
+                      enctype="multipart/form-data">
+                    <input class="form-control" id="name" name="Name" placeholder="Name *" required=""
                            type="text" value="">
-                    <input class="form-control" id="email" name="email" placeholder="Email *" required=""
+                    <input class="form-control" id="email" name="Email" placeholder="Email *" required=""
                            type="email" value="">
-                    <input class="form-control" id="subject" name="subject" placeholder="Subject" type="text" value="">
-                    <textarea class="form-control" name="message" placeholder="Message"></textarea>
-                    <input class="btn-submit mt-3 mb-4" id="submit" name="submit" type="submit" value="Отправить">
+                    <input class="form-control" id="subject" name="Subject" placeholder="Subject" type="text" value="">
+                    <textarea class="form-control" name="Message" placeholder="Message"></textarea>
+                    <input class="btn-submit mt-3 mb-4" id="submit" name="Submit" type="submit" value="Отправить">
                 </form>
             </div>
             <div class="col-12 col-md-6 contacts">
