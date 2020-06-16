@@ -102,7 +102,7 @@ body {
   height: 530px;
   display: flex;
   align-items: center;
-  background: url("../images/bg-main1.jpg") 50% center/cover no-repeat;
+  background: url("../images/bg-main.jpg") 50% center/cover no-repeat;
 }
 @media screen and (max-width: 576px) {
   .slide {
